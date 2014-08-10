@@ -32,7 +32,6 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import com.davemorrissey.labs.subscaleview.R.styleable;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
@@ -189,7 +188,7 @@ public class ScaleImageView extends View {
             }
         });
         // Handle XML attributes
-        if (attr != null) {
+        /*if (attr != null) {
             TypedArray typedAttr = getContext().obtainStyledAttributes(attr, styleable.SubsamplingScaleImageView);
             if (typedAttr.hasValue(styleable.SubsamplingScaleImageView_assetName)) {
                 String assetName = typedAttr.getString(styleable.SubsamplingScaleImageView_assetName);
@@ -209,7 +208,7 @@ public class ScaleImageView extends View {
             if (typedAttr.hasValue(styleable.SubsamplingScaleImageView_zoomEnabled)) {
                 setZoomEnabled(typedAttr.getBoolean(styleable.SubsamplingScaleImageView_zoomEnabled, true));
             }
-        }
+        }*/
     }
 
     public ScaleImageView(Context context) {

@@ -34,7 +34,6 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import com.davemorrissey.labs.subscaleview.R.styleable;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
@@ -201,7 +200,7 @@ public class SubsamplingScaleImageView extends View {
             }
         });
         // Handle XML attributes
-        if (attr != null) {
+        /*if (attr != null) {
             TypedArray typedAttr = getContext().obtainStyledAttributes(attr, styleable.SubsamplingScaleImageView);
             if (typedAttr.hasValue(styleable.SubsamplingScaleImageView_assetName)) {
                 String assetName = typedAttr.getString(styleable.SubsamplingScaleImageView_assetName);
@@ -215,7 +214,7 @@ public class SubsamplingScaleImageView extends View {
             if (typedAttr.hasValue(styleable.SubsamplingScaleImageView_zoomEnabled)) {
                 setZoomEnabled(typedAttr.getBoolean(styleable.SubsamplingScaleImageView_zoomEnabled, true));
             }
-        }
+        }*/
     }
 
     public SubsamplingScaleImageView(Context context) {
@@ -1005,7 +1004,7 @@ public class SubsamplingScaleImageView extends View {
                             try {
                                 ExifInterface exifInterface = new ExifInterface(source);
                                 int orientationAttr = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                                if (orientationAttr == ExifInterface.ORIENTATION_NORMAL) {
+                                if (orientationAttr == ExifInterface.ORIENTATION_NORMAL || orientationAttr == ExifInterface.ORIENTATION_UNDEFINED) {
                                     exifOrientation = ORIENTATION_0;
                                 } else if (orientationAttr == ExifInterface.ORIENTATION_ROTATE_90) {
                                     exifOrientation = ORIENTATION_90;
